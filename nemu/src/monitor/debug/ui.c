@@ -59,14 +59,14 @@ static int cmd_info(char *args){
         char *arg = strtok(NULL," ");
         
         if(strcmp(arg,"r")==0){
-            printf("eax %x \n",cpu.gpr[0]._32);
-            printf("ecx %x \n",cpu.gpr[1]._32);
-            printf("edx %x \n",cpu.gpr[2]._32);
-            printf("ebx %x \n",cpu.gpr[3]._32);
-            printf("esp %x \n",cpu.gpr[4]._32);
-            printf("ebp %x \n",cpu.gpr[5]._32);
-            printf("esi %x \n",cpu.gpr[6]._32);
-            printf("edi %x \n",cpu.gpr[7]._32);
+            printf("eax 0x%x \n",cpu.gpr[0]._32);
+            printf("ecx 0x%x \n",cpu.gpr[1]._32);
+            printf("edx 0x%x \n",cpu.gpr[2]._32);
+            printf("ebx 0x%x \n",cpu.gpr[3]._32);
+            printf("esp 0x%x \n",cpu.gpr[4]._32);
+            printf("ebp 0x%x \n",cpu.gpr[5]._32);
+            printf("esi 0x%x \n",cpu.gpr[6]._32);
+            printf("edi 0x%x \n",cpu.gpr[7]._32);
         }
 
         return 0;
