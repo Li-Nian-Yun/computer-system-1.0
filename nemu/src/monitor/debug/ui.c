@@ -38,6 +38,8 @@ static int cmd_q(char *args) {
 
 static int cmd_help(char *args);
 static int cmd_si(char *args);
+static int cmd_info(char *args);
+
 static struct {
 	char *name;
 	char *description;
@@ -47,11 +49,28 @@ static struct {
 	{ "c", "Continue the execution of the program", cmd_c },
 	{ "q", "Exit NEMU", cmd_q },
         { "si", "The program executes N instructions in a single step and then pause", cmd_si },
+        { "info", "Info register state", cmd_info },
 	/* TODO: Add more commands */
 
 };
 
 #define NR_CMD (sizeof(cmd_table) / sizeof(cmd_table[0]))
+static int cmd_info(char *args){
+        char *arg = strtok(NULL," ");
+        
+        if(strcmp(arg,"r")==0){
+            printf("eax %x \n",cpu.gpr[0]._32);
+            printf("ecx %x \n",cpu.gpr[1]._32);
+            printf("edx %x \n",cpu.gpr[2]._32);
+            printf("ebx %x \n",cpu.gpr[3]._32);
+            printf("esp %x \n",cpu.gpr[4]._32);
+            printf("ebp %x \n",cpu.gpr[5]._32);
+            printf("esi %x \n",cpu.gpr[6]._32);
+            printf("edi %x \n",cpu.gpr[7]._32);
+        }
+
+        return 0;
+}
 
 static int cmd_si(char *args){
         char *arg = strtok(NULL," ");
