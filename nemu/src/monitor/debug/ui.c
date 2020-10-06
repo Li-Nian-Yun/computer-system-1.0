@@ -69,7 +69,7 @@ static int cmd_x(char *args){
         int i;
         for(i=0;i<length;i++){
             printf("0x%x:",address);
-            printf("%x\n",lnaddr_read(address,4));
+            printf("0x%x\n",lnaddr_read(address,4));
             address+=4;
         }
         return 0;        
